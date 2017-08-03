@@ -1,0 +1,6 @@
+<%= render '/shared/title', title: '修改便當訂單'%>
+
+<%= render 'form', order: @order %>
+
+<%= link_to 'Show', @order %> |
+<%= link_to '返回', orders_path, class: 'btn btn-info' %>

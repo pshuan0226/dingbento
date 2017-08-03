@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= render '/shared/title', title: '來訂便當！'%>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>名字</th>
+      <th>手機號碼</th>
+      <th>訂單詳細</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.description %></td>
+        <td><%= link_to 'Show', order, class: 'btn btn-info'%></td>
+        <td><%= link_to 'Edit', edit_order_path(order), class: 'btn btn-warning'%></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新增便當訂單', new_order_path, class: 'btn btn-info' %>
